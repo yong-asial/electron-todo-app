@@ -1,0 +1,93 @@
+/* bootstrap .jumbotron */
+.jumbotron {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    margin-bottom: 0;
+    background-color: #fff;
+  }
+@media (min-width: 768px) {
+  .jumbotron {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+  }
+}
+
+.jumbotron p:last-child {
+  margin-bottom: 0;
+}
+
+.jumbotron-heading {
+  font-weight: 300;
+}
+
+.jumbotron .container {
+  max-width: 40rem;
+}
+
+footer {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+footer p {
+  margin-bottom: .25rem;
+}
+
+.modal-content {
+  width: 560px !important;
+}
+
+/* card  */
+
+.card {
+  margin: 10px;
+  border: 1px solid #ccc;
+  box-shadow: 2px 2px 6px 0px  rgba(0,0,0,0.3);
+  min-width: 250px;
+}
+
+.card-body {
+  padding: 5px !important;
+}
+
+.card-title {
+  margin: 10px !important;
+}
+
+.card-img-top {
+  border-style: double;
+  width: 250px !important;
+  height: 250px !important;
+}
+
+/* others */
+
+.disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.enabled {
+  opacity: 1;
+  cursor: pointer;
+}
+
+.image-placeholder {
+  border-style: double;
+  height: 250px;
+  width: 250px;
+  margin: 5px;
+}
+
+.modal-button-group > label > a {
+  margin: 5px;
+}
+
+.button-group > a {
+  margin-top: 2px;
+}
+
+input.file-upload
+{
+  display: none;
+}
