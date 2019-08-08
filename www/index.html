@@ -1,107 +1,127 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta name="viewport" content="width=device-width, user-scalable=no">
-        <meta http-equiv="Content-type" content="text/html; charset=utf-8">
-        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com https://debug.monaca.mobi; script-src * 'unsafe-inline' 'unsafe-eval'; style-src 'self' https://stackpath.bootstrapcdn.com https://use.fontawesome.com; font-src 'self' https://use.fontawesome.com; media-src 'self' blob: file:; img-src 'self' data: content: blob: android-webview-video-poster:;">
-        <meta name="msapplication-tap-highlight" content="no">
-        <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
-        <link rel="stylesheet" type="text/css" href="css/style.css">
-        <title>Todo</title>
-        <script src="components/loader.js"></script>
-        <link rel="stylesheet" type="text/javascript" href="components/loader.css">
-        <link rel="stylesheet" type="text/css" href="css/vendor/bootstrap.min.css">
-        <link rel="stylesheet" type="text/css" href="css/vendor/fontawesome/css/all.min.css">
-    </head>
-    <body>
-        <main role="main">
-            <section class="jumbotron text-center">
-                <div class="container">
-                    <h1 class="jumbotron-heading">Todos</h1>
-                    <p class="lead text-muted">This is a sample todo list application.</p>
-                    <p class="button-group">
-                        <a id="add-todo-item" class="btn btn-primary enabled" data-toggle="modal" data-target="#todo-modal"><i class="fa fa-plus-circle"></i> Add New Item</a>
-                        <a id="show-pending-todos" class="btn btn-primary enabled"><i class="far fa-square"></i> Pending List</a>
-                        <a id="show-completed-todos" class="btn btn-primary enabled"><i class="far fa-check-square"></i> Completed List</a>
-                        <a id="clear-todos" class="btn btn-danger enabled"><i class="fa fa-trash"></i> Clear</a>
-                    </p>
-                </div>
-            </section>
 
-            <!-- Add/Edit ToDo Modal -->
-            <div class="modal fade" id="todo-modal" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="todoModalTitle" aria-hidden="true">
-                <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="todoModalTitle">Add Todo</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div class="modal-body">
-                            <form id="form-todo-item">
-                                <div class="form-group">
-                                    <label for="task">Input task</label>
-                                    <input type="text" class="form-control" id="todo-item-task" placeholder="I have to do ...">
-                                    <input type="hidden" id="todo-item-id" value="-1"/>
-                                </div>
-                                <h6>Upload picture</h6>
-                                <div class="text-center">
-                                    <div>
-                                        <img src="img/default.svg" class="image-placeholder" id="todo-item-image">
-                                        <div class="d-flex flex-wrap align-content-stretch modal-button-group justify-content-center">
-                                            <label for="file-input">
-                                                <a class="btn btn-sm btn-primary enabled"><i class="fa fa-file-upload"></i> Upload</a>
-                                            </label>
-                                            <input class="file-upload" id="file-input" type="file"/>
-                                            <label for="open-camera-modal">
-                                                <a id="open-camera-modal" class="btn btn-sm btn-info enabled"><i class="fa fa-camera"></i> Camera</a>
-                                            </label>
-                                            <label for="remove-picture">
-                                                <a id="remove-picture" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i> Remove</a>
-                                            </label>
-                                        </div>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                        <div class="modal-footer">
-                            <a id="save-todo-item" class="btn btn-success"><i class="fa fa-save"></i> Save</a>
-                        </div>
-                    </div>
-                </div>
+<head>
+  <meta name="viewport" content="width=device-width, user-scalable=no">
+  <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+  <!-- <meta http-equiv="Content-Security-Policy"
+    content="default-src 'self' data: gap: https://ssl.gstatic.com https://debug.monaca.mobi; script-src * 'unsafe-inline' 'unsafe-eval'; style-src 'self' https://fonts.googleapis.com https://stackpath.bootstrapcdn.com https://use.fontawesome.com; font-src 'self' https://fonts.gstatic.com https://use.fontawesome.com; media-src 'self' blob: file:; img-src 'self' data: content: blob: android-webview-video-poster:;"> -->
+  <meta name="msapplication-tap-highlight" content="no">
+  <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Fredericka+the+Great|Nanum+Pen+Script&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <title>todo app</title>
+  <script src="components/loader.js"></script>
+  <link rel="stylesheet" type="text/javascript" href="components/loader.css">
+  <link rel="stylesheet" type="text/css" href="css/vendor/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="css/vendor/fontawesome/css/all.min.css">
+
+</head>
+
+<body>
+  <div class="title-container">
+    <h1 class="heading-text">Things to do</h1>
+    <hr class="hr-style">
+
+    <div id="nav-clip" class="nav-clip">
+    </div>
+
+    <div class="button-group" id="btn-group">
+      <div class="add-btn-span">
+        <a id="add-todo-item" class="btn btn-primary enabled btn-side add-task-btn hidden" data-toggle="modal" data-target="#todo-modal"><i class="fa fa-plus"></i> new</a>
+      </div>
+
+      <span class="todo-btn-span">
+        <a id="show-pending-todos" class="btn btn-primary enabled btn-side unfinished-btn hidden"><i class="far fa-square"></i> to do</a>
+      </span>
+
+      <span class="done-btn-span">
+        <a id="show-completed-todos" class="btn btn-primary enabled btn-side completed-btn hidden"><i class="far fa-check-square"></i> done</a>
+      </span>
+
+      <span class="clear-btn-span">
+        <a id="clear-todos" class="btn btn-danger enabled btn-side clear-btn hidden"><i class="fa fa-trash"></i> Clear</a>
+      </span>
+    </div>
+  </div>
+
+  <!-- Add/Edit ToDo Modal -->
+  <div class="modal fade" id="todo-modal" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="todoModalTitle" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-body">
+          <form id="form-todo-item">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+
+            <div class="header-modal"></div>
+            <div class="row">
+              <div class="col-4">
+                <img src="img/default.svg" class="image-placeholder" id="todo-item-image">
+              </div>
+              <div class="col-6">
+                <!-- <input type="text" class="form-control todo-name-input" id="todo-item-task" placeholder="I have to do ..."> -->
+                <textarea form="form-todo-item" class="form-control todo-name-input" id="todo-item-task" rows="3" wrap="soft" placeholder="Remember to..."></textarea>
+                <input type="hidden" id="todo-item-id" value="-1" />
+              </div>
+
             </div>
 
-            <!-- Camera Modal -->
-            <div class="modal fade" id="camera-modal" tabindex="-1" data-backdrop="static" role="dialog" aria-labelledby="camera-modal-label" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="camera-modal-label">Take a Pic</h5>
-                            <button id="cordova-camera-cancel" type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div class="modal-body text-center rounded">
-                            <video id="video-container" class="image-placeholder" autoplay></video>
-                        </div>
-                        <div class="modal-footer">
-                            <a id="rotate-camera" class="btn btn-info fa fa-sync enabled" > Rotate</a>
-                            <a id="camera-capture" class="btn btn-info fa fa-camera-retro enabled" data-dismiss="modal"> Capture</a>
-                        </div>
-                    </div>
-                </div>
+            <div class="row photo-buttons">
+              <label for="file-input">
+                <a class="btn btn-sm enabled modal-btn upload-btn"><i class="fa fa-image"></i> Upload</a>
+              </label>
+              <input class="file-upload" id="file-input" type="file" />
+              <label for="open-camera-modal">
+                <a id="open-camera-modal" class="btn btn-sm modal-btn enabled camera-btn"><i class="fa fa-camera"></i> Camera</a>
+              </label>
+              <label for="remove-picture">
+                <a id="remove-picture" class="btn btn-sm modal-btn remove-btn"><i class="fa fa-times"></i> Clear</a>
+              </label>
             </div>
 
-            <div id="todo-container" class="album d-flex flex-wrap align-content-stretch">
-                <!-- todo item -->
-            </div>
+          </form>
 
-        </main>
+          <div class="row">
+            <a id="save-todo-item" class="btn btn-success save-btn"><i class="fa fa-save"></i> Save</a>
+          </div>
+        </div>
 
-        <script type="text/javascript" src="js/vendor/jquery-3.3.1.slim.min.js"></script>
-        <script type="text/javascript" src="js/index.js"></script>
-        <script type="text/javascript" src="js/vendor/popper.min.js"></script>
-        <script type="text/javascript" src="js/vendor/bootstrap.min.js"></script>
-    </body>
+      </div>
+    </div>
+  </div>
+
+  <!-- Camera Modal -->
+  <div class="modal fade" id="camera-modal" tabindex="-1" data-backdrop="static" role="dialog" aria-labelledby="camera-modal-label" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="camera-modal-label">Take a Pic</h5>
+          <button id="cordova-camera-cancel" type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body text-center rounded">
+          <video id="video-container" class="image-placeholder" autoplay></video>
+        </div>
+        <div class="modal-footer">
+          <a id="rotate-camera" class="btn btn-info fa fa-sync enabled"> Rotate</a>
+          <a id="camera-capture" class="btn btn-info fa fa-camera-retro enabled" data-dismiss="modal"> Capture</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="todo-container" class="album d-flex flex-wrap align-content-stretch todo-container">
+    <!-- todo item -->
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="js/index.js"></script>
+  <script type="text/javascript" src="js/vendor/popper.min.js"></script>
+  <script type="text/javascript" src="js/vendor/bootstrap.min.js"></script>
+</body>
+
 </html>

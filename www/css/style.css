@@ -1,67 +1,7 @@
 /* bootstrap .jumbotron */
-.jumbotron {
-    padding-top: 3rem;
-    padding-bottom: 3rem;
-    margin-bottom: 0;
-    background-color: #fff;
-  }
-@media (min-width: 768px) {
-  .jumbotron {
-    padding-top: 6rem;
-    padding-bottom: 6rem;
-  }
-}
-
-.jumbotron p:last-child {
-  margin-bottom: 0;
-}
-
-.jumbotron-heading {
-  font-weight: 300;
-}
-
-.jumbotron .container {
-  max-width: 40rem;
-}
-
-footer {
-  padding-top: 3rem;
-  padding-bottom: 3rem;
-}
-
-footer p {
-  margin-bottom: .25rem;
-}
-
-.modal-content {
-  width: 560px !important;
-}
-
 /* card  */
 
-.card {
-  margin: 10px;
-  border: 1px solid #ccc;
-  box-shadow: 2px 2px 6px 0px  rgba(0,0,0,0.3);
-  min-width: 250px;
-}
-
-.card-body {
-  padding: 5px !important;
-}
-
-.card-title {
-  margin: 10px !important;
-}
-
-.card-img-top {
-  border-style: double;
-  width: 250px !important;
-  height: 250px !important;
-}
-
 /* others */
-
 .disabled {
   opacity: 0.5;
   cursor: default;
@@ -74,20 +14,601 @@ footer p {
 
 .image-placeholder {
   border-style: double;
-  height: 250px;
-  width: 250px;
-  margin: 5px;
 }
 
-.modal-button-group > label > a {
-  margin: 5px;
-}
-
-.button-group > a {
-  margin-top: 2px;
-}
-
-input.file-upload
-{
+input.file-upload {
   display: none;
+}
+
+/* CUSTOM CSS */
+/* font-family: 'Single Day', cursive;
+font-family: 'Fredericka the Great', cursive; */
+/* COLORS:
+blue: #4963b1
+greyblue: #6f80b4
+ */
+body {
+  background-image: url("../img/notebook.jpg") !important;
+}
+
+.heading-text {
+  font-family: 'Fredericka the Great', cursive !important;
+  text-transform: lowercase;
+  /* color: #3b3b3b; */
+  color: #4963b1;
+  font-size: 30px;
+  background: -webkit-linear-gradient(#818181, #4963b1);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: 1px;
+  width: 60%;
+}
+
+.title-container {
+  margin: 20px 0 -30px 30px;
+}
+
+hr.hr-style {
+  border: 0;
+  border-bottom: 1px dashed #dddddd;
+  background: #9a9a9a;
+  width: 210px;
+  margin: -11px 0 0 -10px;
+}
+
+.nav-clip {
+  background-image: url("../img/clips.png");
+  width: 100px;
+  height: 100px;
+  background-size: contain;
+  transform: rotate(90deg);
+  position: fixed;
+  z-index: 500;
+  right: -50px;
+  top: 90px;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+.animated {
+  visibility: visible;
+}
+
+.btn-side {
+  font-family: 'Nanum Pen Script', cursive !important;
+  text-transform: lowercase;
+  letter-spacing: 1px;
+  position: fixed;
+  right: -5px;
+  z-index: 300 !important;
+  animation-duration: 0.5s;
+}
+
+.add-task-btn:before, .clear-btn:before, .upload-btn:before, .camera-btn:before, .edit-btn:before, .check-task-btn:before, .remove-task-btn:before, .remove-btn:before, .save-btn:before {
+  position: absolute;
+  border-radius: 5px;
+  -moz-transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+  z-index: -1;
+  content: '';
+}
+
+.add-task-btn {
+  top: 20px;
+  right: -10px;
+  background-color: #4bc951 !important;
+  border: none !important;
+  color: white !important;
+  font-size: 25px !important;
+  padding-right: 20px !important;
+  transform: rotate(2deg);
+}
+
+.add-task-btn:before {
+  background: #4bc951;
+  height: 37px;
+  right: 83px;
+  top: 6px;
+  width: 37px;
+}
+
+.unfinished-btn {
+  bottom: 135px;
+  background-color: #ecee50 !important;
+  transform: rotate(-3deg);
+  width: 100px;
+  font-size: 18px !important;
+  color: #424242 !important;
+}
+
+.completed-btn {
+  bottom: 85px;
+  transform: rotate(1deg);
+  width: 110px;
+  font-size: 18px !important;
+  background-color: #FFAF07 !important;
+  z-index: -2;
+  color: white !important;
+}
+
+.clear-btn {
+  bottom: 20px;
+  background-color: #FE6BBB !important;
+  transform: rotate(-1deg);
+  width: 100px;
+  height: 40px;
+  padding-top: 9px !important;
+  padding-right: 20px !important;
+  color: #424242 !important;
+}
+
+.clear-btn:before {
+  background: #FE6BBB;
+  height: 30px;
+  right: 83px;
+  top: 5px;
+  width: 30px;
+}
+
+.fa-plus, .fa-square, .fa-check-square, .fa-trash, .fa-image, .fa-camera, .fa-times, .fa-save {
+  margin-right: 5px !important;
+}
+
+.modal-dialog {
+  width: 90% !important;
+  margin: auto !important;
+  overflow: visible !important;
+}
+
+.upload-btn, .camera-btn, .remove-btn, .save-btn {
+  font-family: 'Nanum Pen Script', cursive !important;
+  font-size: 18px !important;
+  text-transform: lowercase;
+}
+
+.no-tasks {
+  font-family: 'Nanum Pen Script', cursive !important;
+  font-size: 23px;
+  margin-left: 40px;
+  color: #424242;
+}
+
+.todo-container {
+  margin-top: 60px;
+  margin-left: 10px;
+  width: 80%;
+}
+
+.card {
+  margin-bottom: 60px;
+  box-shadow: 5px 5px 10px #919191;
+  border-radius: 0 !important;
+  width: 300px !important;
+  margin-left: 50px !important;
+  border: none !important;
+}
+
+.modal {
+  border: none !important;
+  outline: none !important;
+}
+
+.modal-content {
+  border: none !important;
+}
+
+.card-body, .modal-body {
+  background-color: #f3f592 !important;
+  padding: 5px !important;
+}
+
+.header-card, .header-modal {
+  background-color: #e5e78d !important;
+  height: 35px;
+}
+
+.modal-body {
+  padding-bottom: 30px !important;
+}
+
+.header-card {
+  margin: 0 -15px;
+}
+
+.header-modal {
+  margin: -5px -5px 40px -5px;
+}
+
+.close {
+  font-size: 30px !important;
+  margin-right: 5px !important;
+}
+
+.btn {
+  border: none !important;
+}
+
+.modal-btn {
+  position: absolute !important;
+}
+
+.image-placeholder {
+  height: 80px;
+  width: 80px;
+  margin: 20px 0 10px 20px;
+  transform: rotate(2deg);
+}
+
+.upload-btn {
+  top: 10px;
+  transform: rotate(-2deg);
+  width: 100px;
+  font-size: 18px !important;
+  background-color: #FFAF07 !important;
+  color: white !important;
+}
+
+.upload-btn:before {
+  background: #ffaf07;
+  height: 27px;
+  right: -12px;
+  top: 4px;
+  width: 27px;
+}
+
+.camera-btn {
+  background-color: #52A1D9 !important;
+  top: 50px;
+  left: -15px;
+  width: 100px;
+}
+
+.camera-btn:before {
+  background: #52A1D9;
+  height: 27px;
+  right: 85px;
+  top: 4px;
+  width: 27px;
+}
+
+.remove-btn {
+  background: #FE6BBB !important;
+  bottom: -5px;
+  left: 55px;
+  transform: rotate(-10deg);
+}
+
+.remove-btn:before {
+  background: #fe6bbb;
+  top: 4px;
+  right: -13px;
+  height: 27px;
+  width: 27px;
+}
+
+.save-btn {
+  position: absolute;
+  right: -5px;
+  bottom: 5px;
+  transform: rotate(5deg);
+  color: white !important;
+  background-color: #4bc951 !important;
+  width: 90px;
+}
+
+.save-btn:before {
+  background-color: #4bc951;
+  width: 29px;
+  height: 29px;
+  top: 5px;
+  right: 73px;
+}
+
+.todo-name-input {
+  margin-left: 15px !important;
+  margin-top: -20px !important;
+  background-color: #e5e78d !important;
+  border: none !important;
+  font-family: 'Nanum Pen Script', cursive !important;
+  font-size: 20px !important;
+  color: black !important;
+  width: 110% !important;
+}
+
+.todo-name-input:focus {
+  box-shadow: none !important;
+}
+
+.photo-sticker {
+  height: 12px;
+  width: 45px;
+  background-color: rgb(154, 154, 154, 0.5);
+  transform: rotate(40deg);
+  z-index: 10 !important;
+  position: relative;
+  right: -45px;
+  top: 20px;
+}
+
+.card-img-top {
+  height: 70px !important;
+  width: 70px !important;
+  border: none !important;
+  transform: rotate(5deg);
+  box-shadow: 2px 2px 4px #8a8a8a;
+  margin: 5px 10px 55px 5px;
+}
+
+.card-title {
+  font-family: 'Nanum Pen Script', cursive !important;
+  font-size: 20px;
+}
+
+.card-title-col {
+  padding: 25px 10px 10px 20px !important;
+}
+
+.edit-btn, .check-task-btn, .remove-task-btn {
+  font-family: 'Nanum Pen Script', cursive;
+  font-size: 15px !important;
+  text-transform: lowercase;
+  position: absolute;
+  border: none !important;
+  box-shadow: 2px 2px 5px rgba(145, 145, 145, 0.5);
+}
+
+.edit-btn {
+  bottom: 12px;
+  left: -35px;
+  transform: rotate(-10deg);
+  background-color: #52A1D9 !important;
+  color: white !important;
+  padding-right: 20px !important;
+}
+
+.edit-btn:before {
+  background: #52A1D9;
+  height: 24px;
+  right: 55px;
+  top: 3px;
+  width: 24px;
+}
+
+.check-task-btn {
+  top: 0;
+  left: -40px;
+  width: 100px;
+  transform: rotate(5deg);
+  background-color: #4bc951 !important;
+  color: #424242 !important;
+  font-size: 20px !important;
+}
+
+.check-task-btn:before {
+  background: #4bc951;
+  height: 29px;
+  right: -13px;
+  top: 5px;
+  width: 29px;
+}
+
+.remove-task-btn {
+  bottom: -15px;
+  left: 5px;
+  width: 80px;
+  transform: rotate(-25deg);
+  background-color: #FE6BBB !important;
+}
+
+.remove-task-btn:before {
+  background: #fe6bbb;
+  height: 24px;
+  right: -12px;
+  top: 3px;
+  width: 24px;
+}
+
+
+@media screen and (min-width: 600px) {
+  .todo-container {
+    width: 80%;
+    margin: 60px 30px;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .title-container {
+    margin: 30px 20px -10px 60px;
+  }
+
+  .heading-text {
+    font-size: 35px;
+  }
+
+  hr.hr-style {
+    width: 250px;
+  }
+
+  .nav-clip {
+    height: 150px;
+    top: 120px;
+    right: -65px;
+    display: none;
+  }
+
+  .add-task-btn {
+    font-size: 32px !important;
+    width: 170px;
+  }
+
+  .add-task-btn:before {
+    left: -20px;
+    height: 44px;
+    width: 44px;
+    top: 8px;
+  }
+
+  .nav-clip, .unfinished-btn, .clear-btn, .save-btn {
+    width: 150px;
+  }
+
+  .unfinished-btn, .completed-btn, .clear-btn, .upload-btn, .camera-btn, .remove-btn, .todo-name-input, .card-title, .edit-btn, .check-task-btn, .remove-task-btn {
+    font-size: 25px !important;
+  }
+
+  .unfinished-btn {
+    top: 120px;
+    bottom: auto;
+  }
+
+  .completed-btn {
+    width: 130px;
+    top: 180px;
+    bottom: auto;
+  }
+
+  .clear-btn {
+    height: auto;
+  }
+
+  .clear-btn:before {
+    left: -17px;
+    height: 38px;
+    width: 38px;
+    top: 7px;
+  }
+
+  .save-btn {
+    font-size: 30px !important;
+  }
+
+  .upload-btn {
+    width: 150px;
+  }
+
+  .upload-btn:before {
+    width: 33px;
+    height: 33px;
+    top: 6px;
+    right: -15px;
+  }
+
+  .camera-btn {
+    width: 180px;
+    top: 70px;
+  }
+
+  .camera-btn:before {
+    z-index: 3000 !important;
+    left: -15px;
+    width: 33px;
+    height: 33px;
+    top: 6px;
+  }
+
+  .image-placeholder {
+    height: 150px;
+    width: 150px;
+    margin: 80px 0 40px 50px;
+  }
+
+  .remove-btn {
+    width: 120px;
+  }
+
+  .remove-btn:before {
+    width: 33px;
+    height: 33px;
+    top: 6px;
+    right: -15px;
+  }
+
+  .save-btn:before {
+    right: -19px;
+    width: 41px;
+    height: 41px;
+    top: 8px;
+  }
+
+  .todo-name-input {
+    margin: -10px 0 !important;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+    width: 120% !important;
+    height: 220px !important;
+  }
+
+  .todo-container {
+    width: 90%;
+    margin: 40px 30px;
+  }
+
+  .card {
+    margin-left: 70px !important;
+    margin-top: 15px;
+    width: 400px !important;
+  }
+
+  .card-img-top {
+    height: 120px !important;
+    width: 120px !important;
+    margin: 20px 0 100px 20px;
+  }
+
+  .photo-sticker {
+    right: -110px;
+    top: 40px;
+  }
+
+  .card-title-col {
+    margin-left: 15px;
+  }
+
+  .check-task-btn {
+    width: 120px;
+  }
+
+  .check-task-btn:before {
+    height: 35px;
+    width: 35px;
+    right: -15px;
+  }
+
+  .edit-btn {
+    width: 120px;
+    bottom: 30px;
+  }
+
+  .edit-btn:before {
+    z-index: 3000 !important;
+    right: 102px;
+    width: 33px;
+    height: 33px;
+    top: 6px;
+  }
+
+  .remove-task-btn {
+    bottom: -20px;
+    left: 25px;
+    width: 120px;
+  }
+
+  .remove-task-btn:before {
+    width: 33px;
+    height: 33px;
+    top: 6px;
+    right: -15px;
+  }
+
+  .hidden {
+    visibility: visible !important;
+  }
+
+  .no-tasks {
+    font-size: 30px;
+  }
 }
