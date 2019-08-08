@@ -4,12 +4,12 @@
 <head>
   <meta name="viewport" content="width=device-width, user-scalable=no">
   <meta http-equiv="Content-type" content="text/html; charset=utf-8">
-  <!-- <meta http-equiv="Content-Security-Policy"
-    content="default-src 'self' data: gap: https://ssl.gstatic.com https://debug.monaca.mobi; script-src * 'unsafe-inline' 'unsafe-eval'; style-src 'self' https://fonts.googleapis.com https://stackpath.bootstrapcdn.com https://use.fontawesome.com; font-src 'self' https://fonts.gstatic.com https://use.fontawesome.com; media-src 'self' blob: file:; img-src 'self' data: content: blob: android-webview-video-poster:;"> -->
+  <meta http-equiv="Content-Security-Policy"
+    content="default-src 'self' data: gap: https://ssl.gstatic.com https://debug.monaca.mobi; script-src * 'unsafe-inline' 'unsafe-eval'; style-src 'self' https://fonts.googleapis.com https://stackpath.bootstrapcdn.com https://use.fontawesome.com; font-src 'self' https://fonts.gstatic.com https://use.fontawesome.com; media-src 'self' blob: file:; img-src 'self' data: content: blob: android-webview-video-poster:;">
   <meta name="msapplication-tap-highlight" content="no">
   <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
-  <link href="https://fonts.googleapis.com/css?family=Fredericka+the+Great|Nanum+Pen+Script&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="css/vendor/animate.min.css">
+  <link rel="stylesheet" type="text/css" href="css/vendor/google-fonts.css">
   <link rel="stylesheet" type="text/css" href="css/style.css">
   <title>todo app</title>
   <script src="components/loader.js"></script>
@@ -62,7 +62,6 @@
                 <img src="img/default.svg" class="image-placeholder" id="todo-item-image">
               </div>
               <div class="col-6">
-                <!-- <input type="text" class="form-control todo-name-input" id="todo-item-task" placeholder="I have to do ..."> -->
                 <textarea form="form-todo-item" class="form-control todo-name-input" id="todo-item-task" rows="3" wrap="soft" placeholder="Remember to..."></textarea>
                 <input type="hidden" id="todo-item-id" value="-1" />
               </div>
@@ -118,7 +117,7 @@
     <!-- todo item -->
   </div>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="js/vendor/jquery-3.4.1.min.js"></script>
   <script type="text/javascript" src="js/index.js"></script>
   <script type="text/javascript" src="js/vendor/popper.min.js"></script>
   <script type="text/javascript" src="js/vendor/bootstrap.min.js"></script>

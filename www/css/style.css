@@ -66,6 +66,7 @@ hr.hr-style {
   z-index: 500;
   right: -50px;
   top: 90px;
+  cursor: pointer;
 }
 
 .hidden {
