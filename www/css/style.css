@@ -1,6 +1,5 @@
 /* bootstrap .jumbotron */
 /* card  */
-
 /* others */
 .disabled {
   opacity: 0.5;
@@ -20,13 +19,16 @@ input.file-upload {
   display: none;
 }
 
-/* CUSTOM CSS */
-/* font-family: 'Single Day', cursive;
-font-family: 'Fredericka the Great', cursive; */
-/* COLORS:
-blue: #4963b1
-greyblue: #6f80b4
- */
+@font-face {
+  font-family: "Fredericka the Great";
+  src: url("fonts/FrederickatheGreat-Regular.ttf");
+}
+
+@font-face {
+  font-family: "Nanum Pen Script";
+  src: url("fonts/NanumPenScript-Regular.ttf");
+}
+
 body {
   background-image: url("../img/notebook.jpg") !important;
 }
@@ -86,7 +88,7 @@ hr.hr-style {
   animation-duration: 0.5s;
 }
 
-.add-task-btn:before, .clear-btn:before, .upload-btn:before, .camera-btn:before, .edit-btn:before, .check-task-btn:before, .remove-task-btn:before, .remove-btn:before, .save-btn:before {
+.add-task-btn:before, .clear-btn:before, .upload-btn:before, .camera-btn:before, .edit-btn:before, .check-task-btn:before, .remove-task-btn:before, .remove-btn:before, .save-btn:before, .camera-capture-btn:before, .camera-close-btn:before, .camera-rotate-btn:before {
   position: absolute;
   border-radius: 5px;
   -moz-transform: rotate(45deg);
@@ -349,10 +351,10 @@ hr.hr-style {
 }
 
 .card-title-col {
-  padding: 25px 10px 10px 20px !important;
+  padding: 15px 15px 10px 15px !important;
 }
 
-.edit-btn, .check-task-btn, .remove-task-btn {
+.edit-btn, .check-task-btn, .remove-task-btn, .camera-capture-btn, .camera-close-btn, .camera-rotate-btn {
   font-family: 'Nanum Pen Script', cursive;
   font-size: 15px !important;
   text-transform: lowercase;
@@ -412,6 +414,70 @@ hr.hr-style {
   width: 24px;
 }
 
+.camera-modal-body {
+  padding: 0 !important;
+  background-color: #fff !important;
+  /* overflow: hidden; */
+}
+
+.camera-preview {
+  width: 100% !important;
+  margin-bottom: -10px !important;
+}
+
+.camera-capture-btn, .camera-rotate-btn, .camera-close-btn {
+  box-shadow: none !important;
+}
+
+.camera-capture-btn {
+  background-color: #52A1D9 !important;
+  font-size: 20px !important;
+  width: 120px;
+  bottom: -15px;
+  left: 10px;
+  transform: rotate(-5deg);
+}
+
+.camera-capture-btn:before {
+  background-color: #52A1D9;
+  height: 31px;
+  width: 31px;
+  right: -13px;
+}
+
+.camera-rotate-btn {
+  background-color: #ecee50 !important;
+  bottom: 30px;
+  left: -5px;
+  transform: rotate(-2deg);
+}
+
+.camera-rotate-btn:before {
+  width: 26px;
+  height: 26px;
+  background-color: #ecee50;
+  left: -10px;
+  top: 4px;
+}
+
+.fa-sync {
+  padding-right: 5px;
+}
+
+.camera-close-btn {
+  background-color: #fe6bbb !important;
+  bottom: -10px;
+  right: -5px;
+  transform: rotate(3deg);
+}
+
+.camera-close-btn:before {
+  width: 25px;
+  height: 25px;
+  left: -10px;
+  top: 5px;
+  background-color: #fe6bbb;
+}
 
 @media screen and (min-width: 600px) {
   .todo-container {
@@ -610,5 +676,42 @@ hr.hr-style {
 
   .no-tasks {
     font-size: 30px;
+  }
+
+  .camera-capture-btn {
+    font-size: 25px !important;
+    width: 150px;
+  }
+
+  .camera-capture-btn:before {
+    width: 37px;
+    height: 37px;
+    right: -16px;
+  }
+
+  .camera-rotate-btn {
+    bottom: 40px;
+    font-size: 20px !important;
+    width: 120px;
+  }
+
+  .camera-rotate-btn:before {
+    width: 32px;
+    height: 32px;
+    left: -14px;
+    top: 5px;
+  }
+
+  .camera-close-btn {
+    font-size: 22px !important;
+    width: 130px;
+    bottom: -20px;
+  }
+
+  .camera-close-btn:before {
+    width: 34px;
+    height: 34px;
+    left: -14px;
+    top: 5px;
   }
 }

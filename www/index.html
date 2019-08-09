@@ -4,12 +4,11 @@
 <head>
   <meta name="viewport" content="width=device-width, user-scalable=no">
   <meta http-equiv="Content-type" content="text/html; charset=utf-8">
-  <!-- <meta http-equiv="Content-Security-Policy"
-    content="default-src 'self' data: gap: https://ssl.gstatic.com https://debug.monaca.mobi; script-src * 'unsafe-inline' 'unsafe-eval'; style-src 'self' https://fonts.googleapis.com https://stackpath.bootstrapcdn.com https://use.fontawesome.com; font-src 'self' https://fonts.gstatic.com https://use.fontawesome.com; media-src 'self' blob: file:; img-src 'self' data: content: blob: android-webview-video-poster:;"> -->
+  <meta http-equiv="Content-Security-Policy"
+    content="default-src 'self' data: gap: https://ssl.gstatic.com https://debug.monaca.mobi; script-src * 'unsafe-inline' 'unsafe-eval'; style-src 'self'  https://stackpath.bootstrapcdn.com https://use.fontawesome.com; font-src 'self' https://use.fontawesome.com; media-src 'self' blob: file:; img-src 'self' data: content: blob: android-webview-video-poster:;">
   <meta name="msapplication-tap-highlight" content="no">
   <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
-  <link href="https://fonts.googleapis.com/css?family=Fredericka+the+Great|Nanum+Pen+Script&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/animate.min.css">
   <link rel="stylesheet" type="text/css" href="css/style.css">
   <title>todo app</title>
   <script src="components/loader.js"></script>
@@ -62,7 +61,6 @@
                 <img src="img/default.svg" class="image-placeholder" id="todo-item-image">
               </div>
               <div class="col-6">
-                <!-- <input type="text" class="form-control todo-name-input" id="todo-item-task" placeholder="I have to do ..."> -->
                 <textarea form="form-todo-item" class="form-control todo-name-input" id="todo-item-task" rows="3" wrap="soft" placeholder="Remember to..."></textarea>
                 <input type="hidden" id="todo-item-id" value="-1" />
               </div>
@@ -97,19 +95,15 @@
   <div class="modal fade" id="camera-modal" tabindex="-1" data-backdrop="static" role="dialog" aria-labelledby="camera-modal-label" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
       <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="camera-modal-label">Take a Pic</h5>
-          <button id="cordova-camera-cancel" type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
+
+        <div class="camera-header-modal"></div>
+
+        <div class="camera-modal-body modal-body text-center">
+          <video id="video-container" class="camera-preview" autoplay></video>
         </div>
-        <div class="modal-body text-center rounded">
-          <video id="video-container" class="image-placeholder" autoplay></video>
-        </div>
-        <div class="modal-footer">
-          <a id="rotate-camera" class="btn btn-info fa fa-sync enabled"> Rotate</a>
-          <a id="camera-capture" class="btn btn-info fa fa-camera-retro enabled" data-dismiss="modal"> Capture</a>
-        </div>
+          <a id="cordova-camera-cancel" class="btn enabled camera-close-btn" data-dismiss="modal"><i class="fa fa-times"></i> cancel</a>
+          <a id="rotate-camera" class="btn enabled camera-rotate-btn"><i class="fa fa-sync"></i> Rotate</a>
+          <a id="camera-capture" class="btn enabled camera-capture-btn" data-dismiss="modal"><i class="fa fa-camera"></i> Capture</a>
       </div>
     </div>
   </div>
