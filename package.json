@@ -4,21 +4,9 @@
   "version": "1.0.0",
   "description": "A sample todo app",
   "scripts": {
-    "monaca:preview": "npm run dev",
     "dev": "browser-sync start -s www/ --watch --port 8080 --ui-port 8081"
   },
-  "dependencies": {
-    "cordova-plugin-whitelist": "^1.3.4",
-    "monaca-plugin-monaca-core": "^3.2.1"
-  },
   "devDependencies": {
-    "browser-sync": "^2.26.7",
-    "cordova": "^9.0.0"
-  },
-  "cordova": {
-    "plugins": {
-      "cordova-plugin-whitelist": {},
-      "monaca-plugin-monaca-core": {}
-    }
+    "browser-sync": "^2.26.7"
   }
 }
